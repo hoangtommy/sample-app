@@ -1,24 +1,22 @@
-# README
+# Sample App
+* Project following the Rails Tutorial by Michael Hartl
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project Reflection:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Getting Started
+Follow these steps to get the app running locally on your machine.
+```
+$ bundle install --without production
+```
+Next, migrate the database:
+```
+$ rails db:migrate
+```
+Finally, run the test suite to double check things are functioning as intended:
+```
+$ rails test
+```
+Fire up that local server!
+```
+$ rails server
+```
