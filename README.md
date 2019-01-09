@@ -1,5 +1,6 @@
 # Sample App
 * Project following the Rails Tutorial by Michael Hartl
+* Check out the [live demo](https://whispering-ridge-85675.herokuapp.com/about)
 
 ## Project Reflection:
 
