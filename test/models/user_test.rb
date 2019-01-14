@@ -31,4 +31,7 @@ class UserTest < ActiveSupport::TestCase
     @user.email = "a" * 244 + "@hogwarts.com"
     assert @user.invalid?
   end
+  # test "the truth" do
+  #   assert true
+  # end
 end
