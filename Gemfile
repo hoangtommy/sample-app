@@ -9,7 +9,12 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 gem 'bcrypt', '~> 3.1.12'
+# Allows ruby to quickly create fake users for our db
 gem 'faker', '~> 1.7.3'
+# Allows ruby to paginate for tons of users
+gem 'will_paginate', '~> 3.1.6'
+# Allows bootstrap to work with pagination
+gem 'bootstrap-will_paginate', '~> 1.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'puma', '~> 3.9.1'
 # Use SCSS for stylesheets
