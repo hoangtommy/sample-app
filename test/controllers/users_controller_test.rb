@@ -43,4 +43,29 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_path
     assert_redirected_to login_url
   end
+
+  test "should not allow admin attribute to be edited" do
+    log_in_as(@user2)
+    assert_not @user2.admin?
+    patch user_path(@user2), params: { 
+                               user: { password: @user2.password,
+                                       password_confirmation: @user2.password,
+                                       admin: true } }
+    assert_not @user2.admin?
+  end
+
+  test "should redirect destroy if not logged in" do
+    assert_no_difference 'User.count' do 
+      delete user_path(@user)
+    end
+    assert_redirected_to login_url
+  end
+
+  test "should redirect destroy when logged in as non-admin" do
+    log_in_as(@user2)
+    assert_no_difference 'User.count' do
+      delete user_path(@user)
+    end
+    assert_redirected_to root_url
+  end
 end
