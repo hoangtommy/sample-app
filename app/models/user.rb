@@ -42,9 +42,11 @@ class User < ApplicationRecord
 
     # Activates an account
     def activate
-      update_attribute(:activated, true)
+      # update_attribute(:activated, true)
       # here we can omit the use of self.update.. because we're inside the model
-      self.update_attribute(:activated_at, Time.zone.now)
+      # self.update_attribute(:activated_at, Time.zone.now)
+      # we'll replace two update_attribute functions for one method..
+      update_columns(activated: true, activated_at: Time.zone.now)
     end
 
     # Sends activation email

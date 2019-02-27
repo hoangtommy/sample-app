@@ -31,4 +31,11 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     get users_path
     assert_select 'a', text: 'delete', count: 0
   end
+
+  # incomplete
+  # test 'index only activated users' do
+  #   get users_path
+  #   activated_users = User.where(activated: true).count
+  #   assert activated_users 
+  # end
 end
