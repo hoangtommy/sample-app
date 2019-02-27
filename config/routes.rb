@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  
-  
+
   root 'static_page#home'
   # get 'static_page/home' not needed as we'll use root_path and rooth_url
   # get 'static_page/help'
@@ -21,4 +20,6 @@ Rails.application.routes.draw do
   resources :users
 
   resources :account_activations, only: [:edit]
+
+  resources :password_resets, only: [:new, :create, :edit, :update]
 end
